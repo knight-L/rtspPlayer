@@ -49,7 +49,7 @@
 2. **克隆项目**
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:knight-L/rtspPlayer.git
    cd rtspPlayer
    ```
 
