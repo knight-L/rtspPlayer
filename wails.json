@@ -9,5 +9,8 @@
   "author": {
     "name": "knight",
     "email": "941122922@qq.com"
+  },
+  "info": {
+    "productVersion": "1.0.0"
   }
 }
