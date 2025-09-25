@@ -24,7 +24,7 @@ jobs:
             platform:  'windows/amd64'
             os: 'windows-latest'
           - name: 'rtspPlayer'
-            platform:  'darwin/universal'
+            platform:  'darwin/arm64'
             os: 'macos-latest'
 
     runs-on: ${{ matrix.build.os }}
