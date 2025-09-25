@@ -23,7 +23,7 @@ jobs:
           - name: 'rtspPlayer_amd64.exe'
             platform:  'windows/amd64'
             os: 'windows-latest'
-          - name: 'rtspPlayer.app'
+          - name: 'rtspPlayer'
             platform:  'darwin/arm64'
             os: 'macos-latest'
 
