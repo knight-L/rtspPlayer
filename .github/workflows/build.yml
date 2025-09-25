@@ -20,10 +20,10 @@ jobs:
       fail-fast: false
       matrix:
         build:
-          - name: 'rtspPlayer.exe'
+          - name: 'rtspPlayer_amd64.exe'
             platform:  'windows/amd64'
             os: 'windows-latest'
-          - name: 'rtspPlayer'
+          - name: 'rtspPlayer_aarch64'
             platform:  'darwin/arm64'
             os: 'macos-latest'
 
