@@ -41,4 +41,5 @@ jobs:
           build-name: ${{ matrix.build.name }}
           build-platform: ${{ matrix.build.platform }}
           package: true
+          sign: true
           go-version: '1.23'
