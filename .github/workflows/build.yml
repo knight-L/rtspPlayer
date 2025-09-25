@@ -3,8 +3,8 @@ name: Wails build
 on:
   push:
     tags:
-      # Match any new tag
-      - "*"
+    # Match any new tag
+      - '*'
 
 env:
   # Necessary for most environments as build failure can occur due to OOM issues
@@ -16,16 +16,16 @@ permissions:
 jobs:
   build:
     strategy:
-      # Failure in one platform build won't impact the others
+    # Failure in one platform build won't impact the others
       fail-fast: false
       matrix:
         build:
-          - name: "rtspPlayer_amd64.exe"
-            platform: "windows/amd64"
-            os: "windows-latest"
-          - name: "rtspPlayer"
-            platform: "darwin/arm64"
-            os: "macos-latest"
+          - name: 'rtspPlayer_amd64.exe'
+            platform:  'windows/amd64'
+            os: 'windows-latest'
+          - name: 'rtspPlayer'
+            platform:  'darwin/arm64'
+            os: 'macos-latest'
 
     runs-on: ${{ matrix.build.os }}
     steps:
@@ -42,11 +42,4 @@ jobs:
           build-platform: ${{ matrix.build.platform }}
           package: true
           sign: true
-          go-version: "1.23"
-          sign-macos-apple-password: ${{ secrets.APPLE_PASSWORD }}
-          sign-macos-app-id: ${{ secrets.MACOS_DEVELOPER_CERT_ID }}
-          sign-macos-app-cert: ${{ secrets.MACOS_DEVELOPER_CERT }}
-          sign-macos-app-cert-password: ${{ secrets.MACOS_DEVELOPER_CERT_PASSWORD }}
-          sign-macos-installer-id: ${{ secrets.MACOS_INSTALLER_CERT_ID }}
-          sign-macos-installer-cert: ${{ secrets.MACOS_INSTALLER_CERT }}
-          sign-macos-installer-cert-password: ${{ secrets.MACOS_INSTALLER_CERT_PASSWORD }}
+          go-version: '1.23'
