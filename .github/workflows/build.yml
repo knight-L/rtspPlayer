@@ -20,8 +20,10 @@ jobs:
       fail-fast: false
       matrix:
         build:
+          - name: 'rtspPlayer_amd64.exe'
             platform:  'windows/amd64'
             os: 'windows-latest'
+          - name: 'rtspPlayer'
             platform:  'darwin/arm64'
             os: 'macos-latest'
 
@@ -40,3 +42,8 @@ jobs:
           build-platform: ${{ matrix.build.platform }}
           package: true
           go-version: '1.23'
+      # ✅ 仅在 macOS 下去掉隔离属性
+      - name: Remove quarantine attribute
+        if: startsWith(matrix.platform, 'darwin')
+        run: |
+          xattr -rd com.apple.quarantine "build/bin/${{ matrix.build.name }}.app"
